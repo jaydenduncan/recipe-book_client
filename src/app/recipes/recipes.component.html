@@ -1,8 +1,8 @@
 <div class="search-bar">
     <input type="text" [(ngModel)]="recipeInput" placeholder="Search for a recipe">
-    <button><i class="fa fa-search"></i></button>
+    <button (click)="getRecipes()"><i class="fa fa-search"></i></button>
 </div>
 <div class="recipeBox" *ngFor="let recipe of recipes; let i=index">
-    <h1>{{recipe.title}}</h1>
+    <h2>{{recipe.title}}</h2>
     <p>{{recipe.servings}}</p>
 </div>
