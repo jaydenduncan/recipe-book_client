@@ -23,8 +23,12 @@ export class RecipesComponent implements OnInit {
     this.recipesService.getRecipes(this.recipeInput, this.API_KEY).subscribe((data: any) => {
       if(data){
         this.recipes = data;
+        for(let recipe of this.recipes){
+          recipe.ingredients = recipe.ingredients.split("|");
+          recipe.instructions = recipe.instructions.split(". ");
+        }
       }
-    })
+    });
   }
 
 }

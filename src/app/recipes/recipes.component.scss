@@ -50,11 +50,55 @@
     margin: 15px 0px;
 }
 
-.recipeBox h2{
-    padding: 5px;
-}
-
 .recipeBox p{
     font-size: 11px;
     padding: 5px;
+}
+
+.recipeBox .recipeTitle{
+    padding: 5px;
+    width: 425px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.recipeBox .ingredients{
+    font-size: 14px;
+    width: 425px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-top: 50px;
+}
+
+.recipeBox .ingredients span{
+    font-weight: bold;
+}
+
+.recipeBox .instructions{
+    font-size: 14px;
+    width: 425px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.recipeBox .instructions span{
+    font-weight: bold;
+}
+
+.recipeBox .recipeBtn{
+    height: 45px;
+    width: 135px;
+    border-radius: 10px;
+    background-color: #316911;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    float: right;
+    margin-top: 25px;
+    margin-right: 25px;
+    cursor: pointer;
 }
