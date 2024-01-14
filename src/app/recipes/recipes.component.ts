@@ -9,6 +9,7 @@ import { RecipesService } from './recipes.service';
 })
 export class RecipesComponent implements OnInit {
 
+  no_results: boolean = false;
   recipeInput: any;
   recipes: any;
   API_KEY: any;
@@ -22,11 +23,16 @@ export class RecipesComponent implements OnInit {
   getRecipes(){
     this.recipesService.getRecipes(this.recipeInput, this.API_KEY).subscribe((data: any) => {
       if(data){
+        this.no_results = false;
         this.recipes = data;
         for(let recipe of this.recipes){
           recipe.ingredients = recipe.ingredients.split("|");
           recipe.instructions = recipe.instructions.split(". ");
         }
+      }
+      
+      if(data.length === 0){
+        this.no_results = true;
       }
     });
   }

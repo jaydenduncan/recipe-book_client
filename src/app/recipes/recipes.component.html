@@ -1,15 +1,19 @@
-<div class="search-bar">
-    <input type="text" [(ngModel)]="recipeInput" placeholder="Search for a recipe">
-    <button (click)="getRecipes()"><i class="fa fa-search"></i></button>
-</div>
-<div class="search_results">
-    <div class="recipeBox" *ngFor="let recipe of recipes; let i=index">
-        <h2 class="recipeTitle">{{recipe.title}}</h2>
-        <p class="servings">{{recipe.servings}}</p>
-        <p class="ingredients"><span>Ingredients:</span> {{recipe.ingredients}}</p>
-        <p class="instructions"><span>Instructions:</span> {{recipe.instructions}}</p>
-        <div class="recipeBtn">
-            <p>See more >>></p>
+<div class="container">
+    <div class="search-bar">
+        <input type="text" [(ngModel)]="recipeInput" placeholder="Search for a recipe">
+        <button (click)="getRecipes()"><i class="fa fa-search"></i></button>
+    </div>
+    <div class="search_results">
+        <p class="noResults" *ngIf="no_results">--- No results found ---</p>
+    
+        <div class="recipeBox" *ngFor="let recipe of recipes; let i=index">
+            <h2 class="recipeTitle">{{recipe.title}}</h2>
+            <p class="servings">{{recipe.servings}}</p>
+            <p class="ingredients"><span>Ingredients:</span> {{recipe.ingredients}}</p>
+            <p class="instructions"><span>Instructions:</span> {{recipe.instructions}}</p>
+            <div class="recipeBtn">
+                <p>See more >>></p>
+            </div>
         </div>
     </div>
 </div>
