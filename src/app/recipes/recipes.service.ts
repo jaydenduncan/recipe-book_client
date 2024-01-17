@@ -8,6 +8,8 @@ import { HttpClient } from "@angular/common/http";
 })
 export class RecipesService {
 
+    recipe: any;
+
     constructor(private http: HttpClient) {}
 
     getKey(): Observable<string>{
@@ -18,5 +20,13 @@ export class RecipesService {
         return this.http.get<Recipe[]>(`https://api.api-ninjas.com/v1/recipe?query=${recipe}`, {headers: {
             'X-Api-Key': api_key
         }});
+    }
+
+    setRecipe(recipe: Recipe){
+        this.recipe = recipe;
+    }
+
+    getRecipe(): Recipe{
+        return this.recipe;
     }
 }

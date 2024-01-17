@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.recipeDetails{
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    border: 3px solid black;
+    border-radius: 15px;
+    height: 80vh;
+    width: 90%;
+    overflow: auto;
+}
+
+.recipeDetails .title{
+    font-size: 35px;
+}
+
+.recipeDetails span{
+    font-weight: bold;
+    margin-top: 50px;
+    padding: 20px;
+}
+
+.recipeDetails .ingredientsDiv{
+    border: 1px solid black;
+}
+
+.recipeDetails .ingredientsDiv .ingredientsHeading{
+    padding: 15px;
+    font-size: 20px;
+}
+
+.recipeDetails .ingredients{
+    list-style-type: '-';
+}
+
+.recipeDetails .instructionsDiv{
+    border: 1px solid black;
+}
+
+.recipeDetails .instructionsDiv .instructionsHeading{
+    padding: 15px;
+    font-size: 20px;
+}

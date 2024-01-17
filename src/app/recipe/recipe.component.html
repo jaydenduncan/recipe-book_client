@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="recipeDetails">
+        <p class="title">{{recipe.title}}</p>
+        <p class="servings">Servings: {{recipe.servings}}</p>
+        <div class="ingredientsDiv">
+            <span class="ingredientsHeading">Ingredients</span>
+            <ul class="ingredients">
+                <li *ngFor="let ingredient of recipe.ingredients; let i=index">{{ingredient}}</li>
+            </ul>
+        </div>
+        <span></span>
+        <div class="instructionsDiv">
+            <span class="instructionsHeading">Instructions</span>
+            <ol class="instructions">
+                <li *ngFor="let instruction of recipe.instructions; let i=index">{{instruction}}</li>
+            </ol>
+        </div>
+    </div>
+</div>

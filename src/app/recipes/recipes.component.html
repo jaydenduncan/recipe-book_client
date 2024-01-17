@@ -11,7 +11,7 @@
             <p class="servings">{{recipe.servings}}</p>
             <p class="ingredients"><span>Ingredients:</span> {{recipe.ingredients}}</p>
             <p class="instructions"><span>Instructions:</span> {{recipe.instructions}}</p>
-            <div class="recipeBtn">
+            <div (click)="goToRecipe(recipe, i+1)" class="recipeBtn">
                 <p>See more >>></p>
             </div>
         </div>

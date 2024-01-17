@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Recipe } from './recipe.model';
 import { RecipesService } from './recipes.service';
 
@@ -14,7 +15,7 @@ export class RecipesComponent implements OnInit {
   recipes: any;
   API_KEY: any;
 
-  constructor(private recipesService: RecipesService) { }
+  constructor(private recipesService: RecipesService, private router: Router) { }
 
   ngOnInit(): void {
     this.recipesService.getKey().subscribe(data => this.API_KEY = data);
@@ -35,6 +36,14 @@ export class RecipesComponent implements OnInit {
         this.no_results = true;
       }
     });
+  }
+
+  goToRecipe(param: Recipe, index: number): void{
+    this.recipesService.setRecipe(param);
+
+    const navigationDetails: string[] = ['/recipe'];
+    navigationDetails.push(index.toString());
+    this.router.navigate(navigationDetails);
   }
 
 }
